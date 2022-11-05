@@ -9,6 +9,7 @@
   --secondary-btn: #188ce8;
   --header-border-color: #ececec;
   --border-gllery-content: #eeeeee;
+  --icon-color: #afb1b8;
   --indent-nav: 50px;
   --indent-main: 30px;
   --items: 4;
@@ -87,6 +88,7 @@ body {
 .contact-footer:focus,
 .adds-direction:hover,
 .adds-direction:focus {
+  /* outline: none; */
   color: #2196f3;
 }
 .baner-btn:hover,
@@ -102,6 +104,7 @@ body {
   display: flex;
   align-items: center;
 }
+
 .logo {
   font-family: 'Raleway', sans-serif;
   font-weight: 700;
@@ -114,6 +117,7 @@ body {
 .logo-header {
   color: var(--font-secondary-logo);
 }
+
 .site-nav {
   display: flex;
   align-items: center;
@@ -164,8 +168,21 @@ body {
 }
 .base-baner {
   background-color: var(--banner-footer-background-color);
+}
+.overlay-base-baner {
   padding-top: 200px;
   padding-bottom: 200px;
+  max-width: 1600px;
+  min-height: 600px;
+
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url('../images/baner1.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-clip: padding-box;
 }
 .baner-title {
   text-align: center;
@@ -195,6 +212,16 @@ body {
 }
 
 /* Блок наші пріоритети */
+.container-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 270px;
+  height: 120px;
+  margin-bottom: var(--indent-main);
+  background: var(--team-background-color);
+  border-radius: 4px;
+}
 
 .priorities-caption {
   font-size: 14px;
@@ -248,6 +275,9 @@ body {
 .container-team-content {
   padding-top: var(--indent-main);
   padding-bottom: var(--indent-main);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .team-full-name {
@@ -266,35 +296,38 @@ body {
   letter-spacing: 0.03em;
   margin-bottom: 16px;
 }
-.social_list {
+.social-list {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
 }
-
+.social-item {
+  width: 44px;
+  height: 44px;
+}
 .social-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 44px;
-  height: 44px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
-  background-color: #fff;
-
-  /* outline: 2px solid tomato;
-  outline-offset: -2px; */
+  background-color: var(--background-body-color-font-baner);
+  color: var(--background-body-color-font-baner);
 }
 .social-icon {
-  fill: #afb1b8;
+  fill: var(--icon-color);
 }
 
 .social-link:hover .social-icon,
 .social-link:focus .social-icon {
-  fill: #ffffff;
+  outline: none;
+  fill: currentColor;
 }
 .social-link:hover,
 .social-link:focus {
+  outline: none;
   background-color: var(--accent-color-btn);
 }
 
@@ -309,44 +342,58 @@ body {
   align-items: center;
   gap: 30px;
 }
+.partner-item {
+  width: 170px;
+  height: 92px;
+}
 .partner-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 170px;
-  height: 92px;
-  border: 1px solid #afb1b8;
+  width: 100%;
+  height: 100%;
+  color: var(--accent-color-btn);
+  border: 1px solid var(--icon-color);
   border-radius: 4px;
 }
 
 .partner-link:hover,
 .partner-link:focus {
-  border: 1px solid var(--accent-color-btn);
+  outline: none;
+  border: 1px solid currentColor;
   border-radius: 4px;
 }
 
 .partner-link:hover .partner-icon,
 .partner-link:focus .partner-icon {
-  fill: var(--accent-color-btn);
+  outline: none;
+  fill: currentColor;
 }
 
 .partner-icon {
-  fill: #afb1b8;
+  fill: var(--icon-color);
 }
 /* Підвал сайту */
 
-.footer-container {
+/* .footer-container {
   display: flex;
   flex-direction: column;
-}
+} */
 footer {
+  padding: 0;
+  display: flex;
+  align-items: baseline;
   background-color: var(--banner-footer-background-color);
   padding-top: 60px;
   padding-bottom: 60px;
 }
-.footer-container > .logo {
-  margin: 0;
+.footer-container {
+  display: flex;
 }
+
+/* .footer-container > .logo {
+  margin: 0;
+} */
 address {
   font-style: normal;
   padding-top: 20px;
@@ -374,6 +421,50 @@ address {
 .adds-item:not(:last-child) {
   margin-bottom: 9px;
 }
+.social-footer-section {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+}
+
+.social-footer-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.social-footer-title {
+  font-size: 14px;
+  line-height: calc(16 / 14);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  color: var(--background-body-color-font-baner);
+}
+.social-footer-item {
+  width: 44px;
+  height: 44px;
+}
+
+.social-footer-icon {
+  fill: currentColor;
+}
+
+.social-footer-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--background-body-color-font-baner);
+}
+
+.social-footer-link:hover,
+.social-footer-link:focus {
+  outline: none;
+  background-color: var(--accent-color-btn);
+}
 
 /* Галерея основна частина*/
 /* Блок фільтру галереї */
@@ -392,8 +483,12 @@ address {
 }
 .filter-btn:hover,
 .filter-btn:focus {
+  outline: none;
   background-color: var(--accent-color-btn);
   color: var(--background-body-color-font-baner);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
 }
 .filter-btn {
   font-family: inherit;
@@ -437,4 +532,15 @@ address {
   line-height: calc(30 / 16);
   letter-spacing: 0.03em;
   color: var(--font-color-paragraph);
+}
+.gallery-link {
+  display: flex;
+  flex-direction: column;
+}
+.gallery-link:focus,
+.gallery-link:hover {
+  outline: none;
+  background-color: var(--background-body-color-font-baner);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
