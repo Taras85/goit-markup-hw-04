@@ -379,7 +379,6 @@ body {
 footer {
   padding: 0;
   display: flex;
-  align-items: baseline;
   background-color: var(--banner-footer-background-color);
   padding-top: 60px;
   padding-bottom: 60px;
