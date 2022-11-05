@@ -375,10 +375,7 @@ body {
 }
 /* Підвал сайту */
 
-/* .footer-container {
-  display: flex;
-  flex-direction: column;
-} */
+
 footer {
   padding: 0;
   display: flex;
@@ -389,11 +386,9 @@ footer {
 }
 .footer-container {
   display: flex;
+  align-items: baseline;
 }
 
-/* .footer-container > .logo {
-  margin: 0;
-} */
 address {
   font-style: normal;
   padding-top: 20px;
@@ -406,7 +401,7 @@ address {
   line-height: calc(24 / 14);
   letter-spacing: 0.03em;
   color: var(--background-body-color-font-baner);
-  /* margin-bottom: 9px; */
+
 }
 .contact-footer {
   font-size: 14px;
